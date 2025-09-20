@@ -1,0 +1,86 @@
+/* accio-ingestor/src/accio_ingestor/theme.qss */
+* {
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  color: #e6e8eb;
+}
+
+QWidget {
+  background-color: #0f1115;
+}
+
+#Header {
+  font-size: 22px;
+  font-weight: 600;
+  color: #e6e8eb;
+}
+
+#CardTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #9aa3b2;
+}
+
+#Card {
+  background-color: #161a22;
+  border: 1px solid #202634;
+  border-radius: 12px;
+}
+
+QFrame#Card {
+  background-color: #161a22;
+  border: 1px solid #202634;
+  border-radius: 12px;
+}
+
+QPushButton {
+  background-color: #1a1f2a;
+  border: 1px solid #202634;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+QPushButton:hover {
+  border-color: #2a3347;
+  box-shadow: 0 0 0 1px #2a3347;
+}
+
+QPushButton:pressed {
+  background-color: #12151d;
+}
+
+QPushButton:enabled {
+  color: #bfe9ff;
+}
+
+QLineEdit {
+  background-color: #12151d;
+  border: 1px solid #202634;
+  padding: 8px;
+  border-radius: 8px;
+  color: #e6e8eb;
+}
+
+QTextEdit#LogView {
+  background-color: #0f1115;
+  border: 1px solid #202634;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+QStatusBar {
+  background-color: #0f1115;
+  border-top: 1px solid #202634;
+}
+
+QProgressBar {
+  background-color: #12151d;
+  border: 1px solid #202634;
+  border-radius: 8px;
+  text-align: center;
+}
+
+QProgressBar::chunk {
+  background-color: #2ce1ff;
+  margin: 2px;
+  border-radius: 6px;
+}

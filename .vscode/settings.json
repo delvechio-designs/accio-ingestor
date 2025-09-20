@@ -1,0 +1,18 @@
+{
+  // Tell Cursor/VS Code exactly which Python to use (Windows path).
+  "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+  "python.terminal.activateEnvironment": true,
+
+  // Make Pyright/Pylance treat ./src as a package root.
+  "python.analysis.extraPaths": ["./src"],
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.reportMissingTypeStubs": false,
+
+  // Pyright sometimes also looks at these:
+  "python.venvPath": "${workspaceFolder}",
+
+  // Pytest runner niceties
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["-q"]
+}

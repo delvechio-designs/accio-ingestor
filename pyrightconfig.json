@@ -1,0 +1,20 @@
+{
+  "include": ["src", "tests"],
+  "exclude": ["**/__pycache__", "build", "dist", ".venv"],
+  "typeCheckingMode": "basic",
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+
+  // Crucial: tell Pyright where 'src' is and which venv to use.
+  "extraPaths": ["./src"],
+  "venvPath": ".",
+  "venv": ".venv",
+
+  "executionEnvironments": [
+    {
+      "root": "./",
+      "extraPaths": ["./src"],
+      "venv": ".venv"
+    }
+  ]
+}
