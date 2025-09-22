@@ -80,7 +80,7 @@ class JobQueue:
             job_id = cur.lastrowid
             con.commit()
             log.info(f"enqueued job id={job_id} type={type_}")
-            return job_id
+            return job_id  # type: ignore
 
     def _dequeue_due(self) -> Optional[sqlite3.Row]:
         with self._conn() as con:

@@ -16,7 +16,7 @@ from .hashing import sha256_file
 def extract_pdf_pages_text(path: Path) -> List[Page]:
     pages: List[Page] = []
     with fitz.open(path) as doc:
-        for i, page in enumerate(doc):
+        for i, page in enumerate(doc):  # type: ignore
             text = page.get_text().strip()
             if not text:
                 # rasterize at 300 DPI → OCR
