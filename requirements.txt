@@ -10,3 +10,4 @@ tenacity==9.0.0
 pytest==8.2.0
 moto==5.0.12
 responses==0.25.3
+pydantic-settings==2.4.0

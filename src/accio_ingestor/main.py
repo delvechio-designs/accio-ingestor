@@ -1,4 +1,4 @@
-# accio-ingestor/src/accio_ingestor/main.py
+# accio_ingestor/src/accio_ingestor/main.py
 from __future__ import annotations
 
 import argparse
@@ -11,7 +11,7 @@ from .watcher import WatchRunner
 from .pdf_utils import process_file_to_payload
 from .queue import JobQueue
 from .jobs import enqueue_ingest_jobs
-from .slack import SlackClient
+from .slack import SlackClient  # noqa: F401  (import used elsewhere / side effects)
 
 
 def main() -> int:
@@ -26,8 +26,11 @@ def main() -> int:
     ensure_dirs()
 
     if args.gui:
-        from .gui import launch_gui
-        return launch_gui()
+        # run_gui() returns None; this CLI returns int → call then return 0
+        from .gui import run_gui
+
+        run_gui()
+        return 0
 
     if args.watch:
         queue = JobQueue()
@@ -55,7 +58,7 @@ def main() -> int:
         try:
             payload, original_bytes, content_type, sha256 = process_file_to_payload(in_path)
             enqueue_ingest_jobs(queue, payload, sha256, original_bytes, content_type, in_path.name)
-            # Move to processed
+            # Move to processed (mirrors watcher behavior)
             processed = Path(settings.PROCESSED_DIR)
             processed.mkdir(parents=True, exist_ok=True)
             (processed / in_path.name).write_bytes(original_bytes)
